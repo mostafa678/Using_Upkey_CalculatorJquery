@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>
+        Student Registration
+    </title>
+    <style>
+        #header {
+            height: 50px;
+            background-color: burlywood;
+            font-size: xx-large;
+            text-align: center;
+        }
+
+        #menuBar {
+            background-color: beige;
+        }
+
+        #leftSidebar {
+            background-color: lightblue;
+            width: 25%;
+            float: left;
+        }
+
+        #mainContent {
+            background-color: aliceblue;
+            width: 50%;
+            float: left;
+        }
+
+        #rightSidebar {
+            background-color: lightblue;
+            width: 25%;
+            float: left;
+        }
+
+        #footer {
+            height: 30px;
+            width: 100%;
+            bottom: 0px;
+            background-color: burlywood;
+            color: azure;
+            text-align: center;
+        }
+    </style>
+    <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md" id="header">
+                    Student Registration
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="row">
+                        <div class="col-md-1" id="leftSidebar">
+
+                        </div>
+                        <div class="col-10" id="mainContent">
+                            <div class="row"></div>
+                            <div class="col">
+
+                                <form>
+                                    <div class="form-row">
+
+                                        <div class="form-group col-md-6">
+                                            <label for="firstName">First Number</label>
+                                            <input type="text" class="form-control" id="firstNum" placeholder="First Number">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="lastName">Last Number</label>
+                                            <input type="text" class="form-control" id="lastNum" placeholder="Last Number">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="sign">Sign</label>
+                                            <input type="text" class="form-control" id="sign" placeholder="Sign">
+                                        </div>
+                                        <div class="form-group col-md-6">
+                                            <label for="fullName">Result</label>
+                                            <input type="text" class="form-control" id="result" placeholder="Result">
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-6" id="divNew">
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <button type="submit" class="btn btn-primary" id="save">Sign in</button>
+
+                                </form>
+                            </div>
+
+                        </div>
+                        <div class="col-1" id="rightSidebar">
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col jumbotron" id="footer">
+                    Footer
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/jquery-3.0.0.min.js"></script>
+    <script src="../Scripts/bootstrap.min.js"></script>
+    <script>
+
+        $(document).ready(function () {
+
+            $("#sign").keyup(function () {
+                var sign = $("#sign").val();
+                var firstNum = $("#firstNum").val();
+                var lastNum = $("#lastNum").val();
+
+                    if ($("#sign").val() == "*")
+                        $("#result").val(firstNum * lastNum);
+                    else if ($("#sign").val() == "+")
+                        $("#result").val(parseInt(firstNum) + parseInt(lastNum));
+                    else  if ($("#sign").val() == "-")
+                        $("#result").val(parseInt(firstNum) - parseInt(lastNum));
+                    else if ($("#sign").val() == "/")
+                        $("#result").val(parseInt(firstNum) / parseInt(lastNum));
+                    else  if ($("#sign").val() == "%")
+                    $("#result").val(parseInt(firstNum) % parseInt(lastNum));
+                    else
+                        $("#result").val("");
+
+
+            });
+
+            $("#firstNum").keyup(function () {
+                var sign = $("#sign").val();
+                var firstNum = $("#firstNum").val();
+                var lastNum = $("#lastNum").val();
+
+                    if ($("#sign").val() == "*")
+                        $("#result").val(firstNum * lastNum);
+                    if ($("#sign").val() == "+")
+                        $("#result").val(parseInt(firstNum) + parseInt(lastNum));
+                    if ($("#sign").val() == "-")
+                        $("#result").val(parseInt(firstNum) - parseInt(lastNum));
+                    if ($("#sign").val() == "/")
+                        $("#result").val(parseInt(firstNum) / parseInt(lastNum));
+                    if ($("#sign").val() == "%")
+                        $("#result").val(parseInt(firstNum) % parseInt(lastNum));
+            });
+
+            $("#lastNum").keyup(function () {
+                var sign = $("#sign").val();
+                var firstNum = $("#firstNum").val();
+                var lastNum = $("#lastNum").val();
+
+                    if ($("#sign").val() == "*")
+                        $("#result").val(firstNum * lastNum);
+                    if ($("#sign").val() == "+")
+                        $("#result").val(parseInt(firstNum) + parseInt(lastNum));
+                    if ($("#sign").val() == "-")
+                        $("#result").val(parseInt(firstNum) - parseInt(lastNum));
+                    if ($("#sign").val() == "/")
+                        $("#result").val(parseInt(firstNum) / parseInt(lastNum));
+                    if ($("#sign").val() == "%")
+                        $("#result").val(parseInt(firstNum) % parseInt(lastNum));
+            });
+            function calculate()
+            {
+
+            }
+        });
+
+
+
+    </script>
+</body>
+</html>
